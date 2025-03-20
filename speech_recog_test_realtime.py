@@ -12,7 +12,7 @@ if __name__ == '__main__':
         r.adjust_for_ambient_noise(source)  # 주변 소음 보정
 
         while True:
-            if keyboard.is_pressed('q'):  # 'q' 키 감지 시 종료
+            if keyboard.is_pressed('q'):  # 'q' = 종료
                 print("\n음성 인식 종료.")
                 break
 
@@ -20,8 +20,9 @@ if __name__ == '__main__':
             start_time = time.time()
 
             try:
-                audio = r.listen(source, timeout=5)  # 5초 입력 대기
-                text = r.recognize_google(audio, language="ko-KR")  # 한국어 음성 인식
+                audio = r.listen(source, timeout=5)  # 5초 대기
+                text = r.recognize_google(audio, language="ko-KR")
+                # text = r.recognize_whisper(audio, language='ko')
                 print("인식된 텍스트:", text)
             except sr.UnknownValueError:
                 print("음성을 인식할 수 없습니다.")
