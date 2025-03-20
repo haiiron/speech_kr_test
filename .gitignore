@@ -1,1 +1,4 @@
 .idea/
+# 저작권 관련 문제로 데이터 셋은 저장하지 않음.
+datasets/
+KsponSpeech/
