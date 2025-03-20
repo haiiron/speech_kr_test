@@ -20,7 +20,7 @@ if __name__ == '__main__':
             start_time = time.time()
 
             try:
-                audio = r.listen(source, timeout=5)  # 5초 동안 입력 대기
+                audio = r.listen(source, timeout=5)  # 5초 입력 대기
                 text = r.recognize_google(audio, language="ko-KR")  # 한국어 음성 인식
                 print("인식된 텍스트:", text)
             except sr.UnknownValueError:
