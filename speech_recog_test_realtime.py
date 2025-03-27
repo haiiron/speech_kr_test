@@ -21,8 +21,8 @@ if __name__ == '__main__':
 
             try:
                 audio = r.listen(source, timeout=5)  # 5초 대기
-                text = r.recognize_google(audio, language="ko-KR")
-                # text = r.recognize_whisper(audio, language='ko')
+                # text = r.recognize_google(audio, language="ko-KR")
+                text = r.recognize_whisper(audio, language='ko')
                 print("인식된 텍스트:", text)
             except sr.UnknownValueError:
                 print("음성을 인식할 수 없습니다.")
